@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C356A"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/loginLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/bg_login_card"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/logoLogin"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logoupb"
+            android:contentDescription="Logo"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student Attendance"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#0C356A"
+            android:textAlignment="center"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please login with your credentials."
+            android:textSize="15dp"
+            android:textColor="#555555"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Username"
+            android:background="@drawable/bg_edittext"
+            android:padding="12dp"
+            android:textColor="#012A6A"
+            android:textColorHint="#90A4AE"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:background="@drawable/bg_edittext"
+            android:padding="12dp"
+            android:textColor="#012A6A"
+            android:textColorHint="#90A4AE"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:backgroundTint="#FFC436"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
