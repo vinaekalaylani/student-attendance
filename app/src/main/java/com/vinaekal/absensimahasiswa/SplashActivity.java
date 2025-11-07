@@ -36,4 +36,34 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 3000);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("Lifecycle", "onStart: SplashActivity");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Lifecycle", "onResume: SplashActivity");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Lifecycle", "onPause: SplashActivity");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Lifecycle", "onStop: SplashActivity");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Lifecycle", "onDestroy: SplashActivity");
+    }
 }

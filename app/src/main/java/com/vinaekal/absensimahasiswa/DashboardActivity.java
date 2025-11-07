@@ -1,6 +1,7 @@
 package com.vinaekal.absensimahasiswa;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,6 @@ public class DashboardActivity extends AppCompatActivity {
 
     private String clockInTime = "-", clockOutTime = "-";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,9 @@ public class DashboardActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Log lifecycle
+        Log.d("Lifecycle", "onCreate: DashboardActivity");
 
         textGreeting = findViewById(R.id.textGreeting);
         textDate = findViewById(R.id.textDate);
@@ -55,7 +58,36 @@ public class DashboardActivity extends AppCompatActivity {
             textClockOutTime.setText("Clock Out: " + clockOutTime);
             Toast.makeText(this, "Clocked Out at " + clockOutTime, Toast.LENGTH_SHORT).show();
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("Lifecycle", "onStart: DashboardActivity");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("Lifecycle", "onResume: DashboardActivity");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("Lifecycle", "onPause: DashboardActivity");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("Lifecycle", "onStop: DashboardActivity");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Lifecycle", "onDestroy: DashboardActivity");
     }
 
     private void updateGreeting() {
@@ -63,11 +95,11 @@ public class DashboardActivity extends AppCompatActivity {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         String greeting;
         if (hour < 12) {
-            greeting = "Good Morning ☀️";
+            greeting = "Good Morning,";
         } else if (hour < 18) {
-            greeting = "Good Afternoon 🌤️";
+            greeting = "Good Afternoon,";
         } else {
-            greeting = "Good Evening 🌙";
+            greeting = "Good Evening,";
         }
         textGreeting.setText(greeting);
     }
